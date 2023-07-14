@@ -1,0 +1,19 @@
+{
+  "name": "scalajs-vite-example",
+  "version": "0.1.0-SNAPSHOT",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@scala-js/vite-plugin-scalajs": "^1.0.0",
+    "@ui5/webcomponents": "^1.10.0",
+    "@ui5/webcomponents-fiori": "^1.10.0",
+    "@ui5/webcomponents-icons": "^1.10.0",
+    "vite": "^4.1.0"
+  }
+}
