@@ -1,12 +1,13 @@
 package example
 
-import be.doeraene.webcomponents.ui5.{Bar, Button, Input, Label, Link}
 import be.doeraene.webcomponents.ui5.configkeys.{
   BarDesign,
   ButtonDesign,
   IconName,
+  TitleLevel,
   ValueState
 }
+import be.doeraene.webcomponents.ui5.*
 import com.raquo.laminar.api.L.{*, given}
 import org.scalajs.dom
 
@@ -29,7 +30,11 @@ def myDiv =
 
 def myHeaderBar =
   Bar(
-    _ => "TipsLadder.com",
+    Title(
+      "TipsLadder.com",
+      _.level := TitleLevel.H2
+    ),
+    // _ => "TipsLadder.com",
     _.design := BarDesign.Header,
     _.slots.startContent := Button(
       _.icon    := IconName.home,
