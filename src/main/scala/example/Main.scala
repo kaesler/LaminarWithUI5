@@ -1,6 +1,6 @@
 package example
 
-import be.doeraene.webcomponents.ui5.{Bar, Button, Input, Label}
+import be.doeraene.webcomponents.ui5.{Bar, Button, Input, Label, Link}
 import be.doeraene.webcomponents.ui5.configkeys.{
   BarDesign,
   ButtonDesign,
@@ -19,21 +19,23 @@ def helloWorld(): Unit =
 
 def myDiv =
   div(
-    myHeaderBar,
+    headerTag(
+      myHeaderBar
+    ),
     anInput,
+    div("Some text"),
     myFooterBar
   )
 
 def myHeaderBar =
   Bar(
+    _ => "TipsLadder.com",
     _.design := BarDesign.Header,
     _.slots.startContent := Button(
       _.icon    := IconName.home,
       _.tooltip := "Go home",
       _.design  := ButtonDesign.Transparent
     ),
-    title := "TipsLadder.com",
-    _ => Label("TipsLadder.com"),
     _.slots.endContent := Button(
       _.icon    := IconName.document,
       _.tooltip := "Doc",
@@ -51,5 +53,12 @@ def anInput =
 
 def myFooterBar =
   Bar(
-    _.design := BarDesign.Footer
+    _.design := BarDesign.Footer,
+    // Note: this cal also just be Link...)
+    _ =>
+      Link(
+        "Terms and Conditions",
+        href   := "/static/TermsAndConditions.html",
+        target := "_blank"
+      )
   )
